@@ -2,9 +2,9 @@
   <div class="col_div perfil">
       <div class="Secciones">
           <div class="seleccionada"> <!-- Perfil -->
-              <h1><strong><%= current_user.name %> <%= current_user.surname %></strong></h1>
-              <h3><%= current_user.dni %></h3>
-              <h2><%= current_user.bloodtype %></h2>
+              <h1 class="user-name"><strong><%= current_user.name %> <%= current_user.surname %></strong></h1>
+              <span class="blood-type"><%= current_user.bloodtype %></span>
+              <h3 class="dni"><%= current_user.dni %></h3>
               <h4>Fecha de Nacimiento:</h4>
               <p><%= current_user.birthDate %></p>
               <h4>Sexo:</h4>
