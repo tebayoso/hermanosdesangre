@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
   root to: 'static#home'
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :users, path: '', 
+              controllers: { registrations: "registrations" }, 
+              path_names: { registration: '/', edit: 'my_account' }
+
   resources :users do
     resources :ongs
   end
+
   resources :ongs do
     resources :turnos, controller: :bookings, as: 'bookings'
     get '/turnos-dia', to: 'bookings#day_bookings', as: 'day_bookings'
